@@ -15,10 +15,10 @@ public class movedNotSeen : MonoBehaviour {
 	public bool islooking = true;
 	// Update is called once per frame
 	void OnBecameInvisible() {
-		islooking = false;
-	}
-	void OnBecameVisible() {
-		islooking = true;
+		islooking = false;    //This method to see if the cam is looking at the wall doesn't work
+	}                         //It probably has something to do with the wall moving up
+	void OnBecameVisible() {  //I could probably fix it but I don't care for not
+		islooking = true;     //REMINDER: FIX THIS BUG
 	}
 
 	void Update () {
@@ -29,7 +29,7 @@ public class movedNotSeen : MonoBehaviour {
 		var wallPos = transform.position.x;
 
 		//bool islooking = GeometryUtility.CalculateFrustumPlanes; //Not an actual solution, change later
-		// Possibally (camRot >= 180 && camPos > wallPos) || (camRot < 180 && camPos < wallPos);
+		//possibally (camRot >= 180 && camPos > wallPos) || (camRot < 180 && camPos < wallPos);
 		//camRot < 180   Toward END
 		//camRot >= 180    Away END
 		//camPos > wallPos In room
